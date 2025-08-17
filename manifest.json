@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub PR Opener",
+  "version": "1.0",
+  "description": "Opens GitHub PRs for commits since a selected date",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/commits/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "GitHub PR Opener"
+  }
+}

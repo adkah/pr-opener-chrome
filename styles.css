@@ -1,0 +1,168 @@
+.github-pr-opener-container {
+  position: relative;
+  margin: 16px 0;
+  z-index: 1000;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.github-pr-opener-panel {
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.date-picker-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.date-picker-section label {
+  font-weight: 500;
+  color: #24292f;
+  white-space: nowrap;
+}
+
+#commit-date-picker {
+  padding: 6px 12px;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  min-width: 140px;
+}
+
+#commit-date-picker:focus {
+  outline: none;
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+}
+
+#open-prs-btn {
+  background: #238636;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#open-prs-btn:hover:not(:disabled) {
+  background: #2ea043;
+}
+
+#open-prs-btn:disabled {
+  background: #8cc665;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: none;
+}
+
+.status-message.success {
+  background: #d1f7d6;
+  color: #1b7f37;
+  border: 1px solid #a2e2a8;
+}
+
+.status-message.error {
+  background: #ffebe9;
+  color: #d1242f;
+  border: 1px solid #fd8489;
+}
+
+.status-message.warning {
+  background: #fff8c5;
+  color: #7d4e00;
+  border: 1px solid #d4a72c;
+}
+
+.status-message.loading {
+  background: #ddf4ff;
+  color: #0969da;
+  border: 1px solid #9fc5e8;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .github-pr-opener-panel {
+    background: #161b22;
+    border-color: #30363d;
+    color: #e6edf3;
+  }
+
+  .github-pr-opener-panel h3 {
+    color: #e6edf3;
+  }
+
+  .date-picker-section label {
+    color: #e6edf3;
+  }
+
+  #commit-date-picker {
+    background: #0d1117;
+    border-color: #30363d;
+    color: #e6edf3;
+  }
+
+  #commit-date-picker:focus {
+    border-color: #1f6feb;
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+  }
+
+  .status-message.success {
+    background: #033a16;
+    color: #3fb950;
+    border-color: #2ea043;
+  }
+
+  .status-message.error {
+    background: #490202;
+    color: #f85149;
+    border-color: #da3633;
+  }
+
+  .status-message.warning {
+    background: #341a00;
+    color: #d29922;
+    border-color: #bf8700;
+  }
+
+  .status-message.loading {
+    background: #0c2d6b;
+    color: #79c0ff;
+    border-color: #1f6feb;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .date-picker-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #commit-date-picker {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  #open-prs-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
